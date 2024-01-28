@@ -15,7 +15,7 @@ btn.addEventListener("click", async function getData() {
         const data = await res.json();
 
         console.log(data);
-        if (res.status == 200) {
+        if (data['type']) {
             const avatar  = document.querySelector(".avatar img")
             avatar.src = data['avatar_url']
             
@@ -51,9 +51,6 @@ btn.addEventListener("click", async function getData() {
 
             const sgit = document.querySelector(".sgit span");
             sgit.innerHTML = data['login']
-        }
-        else {
-            alert("Unkown user");
         }
     }
 });
