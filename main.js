@@ -23,10 +23,12 @@ btn.addEventListener("click", async function getData() {
             userName.innerHTML = data['login']
             
             const lightName = document.querySelector(".top-section p")
-            lightName.innerHTML = data['name']
+            lightName.innerHTML = data['name'].toString();
             
             const joinedDate = document.querySelector(".joined-date");
-            joinedDate.innerHTML = data['created_at'];
+            const date = new Date(data['created_at']);
+            const readableDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+            joinedDate.innerHTML = readableDate;
             
             const bio = document.querySelector(".descreption p")
             bio.innerHTML = data['bio'] != null ? data['bio'] : 'This profile has no bio';
