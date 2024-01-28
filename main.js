@@ -53,7 +53,7 @@ btn.addEventListener("click", async function getData() {
             sgit.innerHTML = data['login']
         }
         else {
-            console.log("Uknown user");
+            alert("Unkown user");
         }
     }
 });
